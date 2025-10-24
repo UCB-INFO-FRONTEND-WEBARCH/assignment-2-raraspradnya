@@ -1,0 +1,160 @@
+* {
+    font-family: "Roboto";
+    font-size: 14px;
+    margin: none;
+    border: none;
+}
+
+html, body { margin: 0; padding: 0; }
+
+/* HEADER STYLES */
+header {
+    background-color: #dc4c3e;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+#searchbar{
+    display: flex;
+    gap: 15px;
+}
+
+#searchbar button{
+    background-color: #dc4c3e;
+    border: none;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+#searchbar #search_container{
+    background-color: #ff8a80;
+    border: none;
+    color: white;
+    width: 18rem;
+    border-radius: 3px;
+    padding: 5px 10px;
+    display: flex;
+    gap: 5px;
+}
+
+#searchbar #search_bar{
+    border:none;
+    background: none;
+    width: 100%;
+}
+
+#searchbar #search_bar::placeholder{
+    color: white;
+}
+
+#task_counter {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+main{
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* SIDEBAR STYLES */
+
+#stats{
+    display: flex;
+    flex-direction: column;
+    background-color: #fefbf2;
+    width: 300px;
+}
+
+#stats ul{
+    list-style-type: none;
+    margin: 50px 100px 10px -10px;
+}
+
+#stats li{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px;
+}
+
+#stats .task_counter{
+    color: #7e7d79;
+    font-size: 12px;
+    padding: 5px;
+}
+
+/* MAIN CONTENT */
+#task_list{
+    width: 100%;
+    padding: 50px 80px;
+    display:flex;
+    flex-direction: column;
+    gap:10px;
+}
+
+#task_list h1{
+    font-size: 20px;
+    margin: 5px 0px 0px 0px;
+}
+
+#task_list div{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #d6d6d6;
+    padding: 5px 0px 10px;
+}
+
+
+#task_list #task_item{
+    display: flex;
+    gap: auto;
+}
+
+#task_list input{
+    width: 15px;
+    height: 15px;
+    min-width: 15px;
+    max-width: 15px;
+    border-radius: 50%;
+    background-color: white;
+    border: 1px solid #7e7d79;
+    vertical-align: middle;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+#task_list input:checked {
+    appearance: none;
+    background-color: gray;
+}
+
+#task_list ul {
+    padding: 0;
+    margin: 0;
+}
+
+#task_list li {
+    list-style: none;
+    padding: 10px 0px;
+    border-bottom: 1px solid #d6d6d6;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* RESPONSIVE STYLES */
+@media (max-width: 480px) {
+
+  #stats {
+    display: none;
+  }
+
+}
