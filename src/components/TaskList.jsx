@@ -4,8 +4,8 @@ function TaskList({tasks, onDelete, onToggle}){
     return (
         <section id="task-list">
             <ul>
-                {tasks.map((item) => (
-                    <TaskItem key={item.id} item={item} onDelete={onDelete} onToggle={onToggle}/>
+                {tasks.map((task) => (
+                    <TaskItem key={task.id} task={task} onDelete={onDelete} onToggle={onToggle}/>
                 ))}
             </ul>
         </section>

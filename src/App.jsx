@@ -1,12 +1,13 @@
 import { useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 import './App.css'
+import TaskList from './components/TaskList'
 import TaskForm from './components/TaskForm'
 import TaskCounter from './components/TaskCounter'
-import TaskList from './components/TaskList'
+import TaskFilter from './components/TaskFilter'
 import Searchbar from './components/Searchbar'
 import Sidebar from './components/Sidebar'
-import TaskFilter from './components/TaskFilter'
+import EmptyMessage from './components/EmptyMessage'
 
 // Example component structure
 function App() {
@@ -17,11 +18,9 @@ function App() {
       completed: false
     }
   ]);
+  const [filter, setFilter] = useState('all'); // all, active, completed
 
-  const taskCount = tasks.length;
-  const completedTasks = tasks.filter((task) => task.completed === true )
-  const completedCount = completedTasks.length;
-  
+
   const addTask = (newTask) => {
     // Add new task to state
     newTask.id = uuidv4()
@@ -45,7 +44,9 @@ function App() {
     }
   };
 
-  const [filter, setFilter] = useState('all'); // all, active, completed
+  const taskCount = tasks.length;
+  const completedTasks = tasks.filter((task) => task.completed === true )
+  const completedCount = completedTasks.length;
 
   // Derived state - computed from existing state
   const filteredTasks = tasks.filter(task => {
@@ -55,8 +56,6 @@ function App() {
   });
 
   const handleFilterClick = (filter) => {
-    console.log(filter);
-    console.log(tasks);
     setFilter(filter)
   }
 
@@ -72,11 +71,13 @@ function App() {
           <h1>Inbox</h1>
           <TaskForm onAddTask={addTask}/>
           <TaskFilter filter={filter} handleFilterClick={handleFilterClick}/>
-          <TaskList
-            tasks={filteredTasks} 
-            onToggle={toggleTask}
-            onDelete={deleteTask}
-          />
+          {tasks.length === 0 ? <EmptyMessage /> : 
+            <TaskList
+              tasks={filteredTasks} 
+              onToggle={toggleTask}
+              onDelete={deleteTask}
+            />
+          }
         </section>
       </main>
     </div>

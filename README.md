@@ -62,7 +62,7 @@ Implement task filtering functionality:
 - Display three filter buttons: "All", "Active", and "Completed"
 - Filter tasks based on completion status when buttons are clicked
 - Highlight the currently active filter button
-- Update task counter to reflect the filtered view (e.g., "3 of 5 tasks" when showing completed)
+- Update task counter to reflect the filtered view (e.g., "3 of 5 tasks" when showing completed) #TODO
 - Default filter should be "All" showing all tasks
 
 ---
@@ -283,7 +283,7 @@ This component receives a task via props and displays:
 - A delete button that calls onDelete when clicked
 
 Key concepts:
-- Use `checked={task.completed}` for checkbox
+- Use `checked={task.completed}` for checkbox #TODO
 - Apply a CSS class conditionally for completed tasks
 - Pass `task.id` when calling the handler functions
 
@@ -308,7 +308,7 @@ This component calculates and displays statistics.
 Think about:
 - How to count total tasks (array length)
 - How to count completed tasks (use `.filter()`)
-- How to calculate active tasks (total - completed)
+- How to calculate active tasks (total - completed) #TODO
 
 Display these three numbers in your UI.
 
@@ -500,7 +500,7 @@ const filteredTasks = tasks.filter(task => {
 A: Yes, but focus on doing the core requirements and filtering excellently first.
 
 **Q: How should the task counter work with filtering?**
-A: When showing "Active", display count of active tasks. When showing "Completed", display count of completed tasks. When showing "All", display total count.
+A: When showing "Active", display count of active tasks. When showing "Completed", display count of completed tasks. When showing "All", display total count.  #TODO
 
 **Q: Do I need to match the exact visual design from Assignment 1?**
 A: Close visual similarity is expected, but small improvements are welcome.

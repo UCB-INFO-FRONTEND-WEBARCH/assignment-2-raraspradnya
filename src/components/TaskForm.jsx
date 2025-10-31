@@ -15,7 +15,6 @@ function TaskForm({onAddTask}){
                 completed: false,
                 text
             }
-            // console.log(newTask);
             onAddTask(newTask);
             setText('');
         }

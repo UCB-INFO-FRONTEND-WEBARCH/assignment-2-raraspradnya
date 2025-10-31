@@ -181,14 +181,17 @@ main{
     font-size: 12px;
 }
 
-#task-form button.disabled {
-    background-color:#d6d6d6;
-}
-
-#task-form button.active,  #task-filter button[filter-status="active"]{
+#task-form button.active,  
+#task-filter button.active{
     background-color:#dc4c3e;
     color:white;
 }
+
+#task-filter button:hover{
+    background-color:#ff8a80;
+    color:white;
+}
+
 
 #task-filter {
     display: flex;
