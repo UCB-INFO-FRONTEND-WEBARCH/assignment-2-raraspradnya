@@ -1,14 +1,9 @@
-import Searchbar from './Searchbar'
-
-function TaskCounter(){
+function TaskCounter({taskCount, completedCount}){
     return (
-        <header>
-            <Searchbar />
-            <section id="task_counter">
-                <img src="/src/assets/check_icon.png" alt="Task Counter" />
-                <span>30/5</span> 
-            </section>
-        </header>
+        <section id="task_counter">
+            <img src="/src/assets/check_icon.png" alt="Task Counter" />
+            <span>{`${taskCount}`}/{`${completedCount}`}</span> 
+        </section>
     )
 }
 

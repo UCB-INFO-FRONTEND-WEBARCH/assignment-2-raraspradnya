@@ -91,7 +91,7 @@ main{
 }
 
 /* MAIN CONTENT */
-#task_list{
+#task_main{
     width: 100%;
     padding: 50px 80px;
     display:flex;
@@ -99,30 +99,38 @@ main{
     gap:10px;
 }
 
-#task_list h1{
+#task_main h1{
     font-size: 20px;
     margin: 5px 0px 0px 0px;
 }
 
-#task_list div{
+#task-list ul {
+    padding: 0;
+    margin: 0;
+}
+
+#task-list li {
+    list-style: none;
+    padding: 10px 0px;
+    border-bottom: 1px solid #d6d6d6;
     display: flex;
     align-items: center;
-    gap: 10px;
-    border-bottom: 1px solid #d6d6d6;
-    padding: 5px 0px 10px;
+    gap: 5px;
+    justify-content: space-between;
 }
 
-
-#task_list #task_item{
+#task-list li .task-container {
     display: flex;
-    gap: auto;
+    gap: 5px;
+    flex-direction: row;
+    align-items: center;
 }
 
-#task_list input{
-    width: 15px;
-    height: 15px;
-    min-width: 15px;
-    max-width: 15px;
+#task-list li .task-container input{
+    width: 13px;
+    height: 13px;
+    min-width: 13px;
+    max-width: 13px;
     border-radius: 50%;
     background-color: white;
     border: 1px solid #7e7d79;
@@ -131,24 +139,62 @@ main{
     -webkit-appearance: none;
 }
 
-#task_list input:checked {
+
+#task-list li .task-container input[task-status="completed"] {
     appearance: none;
-    background-color: gray;
+    background-color: #7e7d79;
 }
 
-#task_list ul {
-    padding: 0;
-    margin: 0;
+#task-list li .task-container label[task-status="completed"] {
+    text-decoration: line-through;
 }
 
-#task_list li {
-    list-style: none;
-    padding: 10px 0px;
-    border-bottom: 1px solid #d6d6d6;
+#task-list li button.close {
+    background-color: white;
+    padding: 0px 10px;
     display: flex;
     align-items: center;
-    gap: 5px;
 }
+
+#task-form .input-group {
+    display: flex;
+    gap: 10px;
+    border: 1px solid #d6d6d6;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 10px 0px;
+}
+
+#task-form input {
+    width: 100%;
+    margin: 0px 10px;
+}
+
+#task-form input:focus {
+    outline-width: 0;
+}
+
+#task-form button, #task-filter button {
+    min-width: 80px;
+    padding: 8px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+#task-form button.disabled {
+    background-color:#d6d6d6;
+}
+
+#task-form button.active,  #task-filter button[filter-status="active"]{
+    background-color:#dc4c3e;
+    color:white;
+}
+
+#task-filter {
+    display: flex;
+    gap: 10px;
+}
+
 
 /* RESPONSIVE STYLES */
 @media (max-width: 480px) {

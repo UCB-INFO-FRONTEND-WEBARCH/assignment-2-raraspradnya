@@ -1,8 +1,33 @@
-function TaskForm(){
+import { useState } from "react"
+
+function TaskForm({onAddTask}){
+    const [text, setText] = useState('')
+
+    const handleTextChange = (e) => {
+        setText(e.target.value)
+    }
+    
+    const handleSubmit = (e) => {
+        e.preventDefault()
+
+        if(text.trim().length > 0){
+            const newTask ={
+                completed: false,
+                text
+            }
+            // console.log(newTask);
+            onAddTask(newTask);
+            setText('');
+        }
+    }
+
     return (
-        <div>
-            <h2>My First Component</h2>
-        </div>
+        <form id="task-form" onSubmit={handleSubmit}>
+            <div className="input-group">
+                <input type="text" onChange={handleTextChange} placeholder='Create a new task' id="task-input" value={text}></input>
+                <button type="submit" id="task-submit" className={`${text === '' ? 'disabled' : 'active'}`}>Add</button>
+            </div>
+        </form>
     )
 }
 
