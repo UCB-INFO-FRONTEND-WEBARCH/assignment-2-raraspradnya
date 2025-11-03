@@ -43,10 +43,15 @@ header {
     border:none;
     background: none;
     width: 100%;
+    color: white;
 }
 
 #searchbar #search_bar::placeholder{
     color: white;
+}
+
+#searchbar #search_bar:focus, #task-form input:focus {
+    outline-width: 0;
 }
 
 #task_counter {
@@ -168,10 +173,6 @@ main{
 #task-form input {
     width: 100%;
     margin: 0px 10px;
-}
-
-#task-form input:focus {
-    outline-width: 0;
 }
 
 #task-form button, #task-filter button {
