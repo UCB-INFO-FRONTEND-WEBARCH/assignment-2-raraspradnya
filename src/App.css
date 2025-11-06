@@ -8,15 +8,8 @@
 html, body {
     margin: 0; 
     padding: 0; 
-    height: 100%;
-}
-
-.app {
     display: flex;
     flex-direction: column;
-    width: auto;
-    min-height: 100vh;
-    height: 100%;
 }
 
 /* HEADER STYLES */
@@ -32,6 +25,7 @@ header {
 
 #searchbar{
     display: flex;
+    /* min-width: 25%;  */
 }
 
 #searchbar button{
@@ -49,7 +43,7 @@ header {
     padding: 5px 10px;
     display: flex;
     gap: 5px;
-    max-width: 200px;
+    width: 250px;
 }
 
 #searchbar #search_bar{
@@ -218,12 +212,15 @@ main{
 /* RESPONSIVE STYLES */
 @media (max-width: 480px) {
 
-  #stats {
-    display: none;
-  }
+    #stats {
+        display: none;
+    }
 
-  #task-main{
-    width: 100vw;
-}
+    #task-main{
+        width: 100vw;
+    }
 
+    #searchbar #search-container{
+        width: auto;
+    }
 }
