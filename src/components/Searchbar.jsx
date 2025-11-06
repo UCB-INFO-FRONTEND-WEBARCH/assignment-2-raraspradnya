@@ -4,7 +4,7 @@ function Searchbar(){
             <button id="searchbar">
                 <img src="/src/assets/menu_icon.png" alt="Menu" />
             </button>
-            <label id="search_container"> 
+            <label id="search-container"> 
                 <img id="search_icon" src="/src/assets/search_icon.png" alt="search" />
                 <input type="text" id="search_bar" placeholder="Quick Find"/>
             </label>

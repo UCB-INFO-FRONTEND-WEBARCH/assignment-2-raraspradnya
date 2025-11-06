@@ -67,7 +67,7 @@ function App() {
       </header>
       <main>
         <Sidebar />
-        <section id="task_main">
+        <section id="task-main">
           <h1>Inbox</h1>
           <TaskForm onAddTask={addTask}/>
           <TaskFilter filter={filter} handleFilterClick={handleFilterClick}/>

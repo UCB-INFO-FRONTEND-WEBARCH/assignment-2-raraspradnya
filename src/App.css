@@ -5,7 +5,19 @@
     border: none;
 }
 
-html, body { margin: 0; padding: 0; }
+html, body {
+    margin: 0; 
+    padding: 0; 
+    height: 100%;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    min-height: 100vh;
+    height: 100%;
+}
 
 /* HEADER STYLES */
 header {
@@ -14,11 +26,12 @@ header {
     display: flex;
     justify-content: space-between;
     padding: 10px;
+    min-height: 35px;
+    flex-wrap: wrap;
 }
 
 #searchbar{
     display: flex;
-    gap: 15px;
 }
 
 #searchbar button{
@@ -28,15 +41,15 @@ header {
     margin-left: 20px;
 }
 
-#searchbar #search_container{
+#searchbar #search-container{
     background-color: #ff8a80;
     border: none;
     color: white;
-    width: 18rem;
     border-radius: 3px;
     padding: 5px 10px;
     display: flex;
     gap: 5px;
+    max-width: 200px;
 }
 
 #searchbar #search_bar{
@@ -64,7 +77,8 @@ header {
 
 main{
     display: flex;
-    min-height: 100vh;
+    min-height: calc(100vh - 35px);
+    min-width: 100vw;
 }
 
 
@@ -96,15 +110,15 @@ main{
 }
 
 /* MAIN CONTENT */
-#task_main{
-    width: 100%;
-    padding: 50px 80px;
+#task-main{
+    padding: 50px 7.5% 0%;
     display:flex;
     flex-direction: column;
     gap:10px;
+    width: calc(100vw - 300px);
 }
 
-#task_main h1{
+#task-main h1{
     font-size: 20px;
     margin: 5px 0px 0px 0px;
 }
@@ -197,6 +211,7 @@ main{
 #task-filter {
     display: flex;
     gap: 10px;
+    flex-wrap: wrap;
 }
 
 
@@ -206,5 +221,9 @@ main{
   #stats {
     display: none;
   }
+
+  #task-main{
+    width: 100vw;
+}
 
 }
