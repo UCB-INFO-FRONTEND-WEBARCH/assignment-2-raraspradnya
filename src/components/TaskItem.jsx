@@ -4,7 +4,7 @@ function TaskItem({task, onDelete, onToggle}){
 
     return (
         <li>
-            <div className='task-container'>
+            <div className='task-item-container'>
                 <input type="checkbox" className="task-item" name={`${task.id}`} id={`${task.id}`} task-status={`${task.completed ? 'completed' : 'active'}`} onChange={() => onToggle(task.id)}/>
                 <label htmlFor={`${task.id}`} task-status={`${task.completed ? 'completed' : 'active'}`}>{task.text}</label>
             </div>

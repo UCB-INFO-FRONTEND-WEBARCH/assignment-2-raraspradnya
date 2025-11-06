@@ -54,7 +54,7 @@ header {
     outline-width: 0;
 }
 
-#task_counter {
+#task-counter {
     display: flex;
     gap: 5px;
     justify-content: center;
@@ -89,7 +89,7 @@ main{
     padding: 5px;
 }
 
-#stats .task_counter{
+#stats .task-counter{
     color: #7e7d79;
     font-size: 12px;
     padding: 5px;
@@ -124,14 +124,14 @@ main{
     justify-content: space-between;
 }
 
-#task-list li .task-container {
+#task-list li .task-item-container {
     display: flex;
     gap: 5px;
     flex-direction: row;
     align-items: center;
 }
 
-#task-list li .task-container input{
+#task-list li .task-item-container input{
     width: 13px;
     height: 13px;
     min-width: 13px;
@@ -145,12 +145,12 @@ main{
 }
 
 
-#task-list li .task-container input[task-status="completed"] {
+#task-list li .task-item-container input[task-status="completed"] {
     appearance: none;
     background-color: #7e7d79;
 }
 
-#task-list li .task-container label[task-status="completed"] {
+#task-list li .task-item-container label[task-status="completed"] {
     text-decoration: line-through;
 }
 
